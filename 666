@@ -28,16 +28,32 @@
       height;50;
       font-size:25;
       margin:2;
+      background:red;
+      border:none;
+      color:white;
     }
     .textview{
       width:223;
       margin:5;
       font-size:25;
       padding:5;
+      border:none;
+      color:#607d8b;
+    }
+    .main{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translateX(-50%)translateY(-50%);
+    }
+    .bg{
+      background:linear-gradient(to #e91e63,#3f51b5);
+      height:100%;
     }
   </style>
 <body>
 	<h1>ATW四级密钥</h1>
+        <div class="bg"></div>
 	<div class="main">
       <form name="form">
         <input class="textview"name="textview">
