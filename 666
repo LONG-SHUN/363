@@ -5,6 +5,18 @@
 <title>文档标题</title>
 </head>
   <script>
+    function inset(num){
+      document.form.textview.value=document.form.textview.value+num;
+    }
+    
+    function equal(){
+        var exp=document.form.textview.value;
+        if(exp){
+          document.form.textview.value=eval(exp);
+        }
+     function clean(){
+       document.form.textview.value="";
+     }
   </script>
   <style>
     *{
@@ -28,28 +40,28 @@
 	<h1>ATW四级密钥</h1>
 	<div class="main">
       <form name="form">
-        <input class="textview">
+        <input class="textview"name="textview">
       </form>
       <table>
         <tr>
-          <td><input class="button"type="button" value="1"></td>
-          <td><input class="button"type="button" value="2"></td>
-          <td><input class="button"type="button" value="3"></td>
+          <td><input class="button"type="button" value="1"onclick="inset(1)"></td>
+          <td><input class="button"type="button" value="2"onclick="inset(2)"></td>
+          <td><input class="button"type="button" value="3"onclick="inset(3)"></td>
         </tr>
         <tr>
-          <td><input class="button"type="button" value="4"></td>
-          <td><input class="button"type="button" value="5"></td>
-          <td><input class="button"type="button" value="6"></td>
+          <td><input class="button"type="button" value="4"onclick="inset(4)"></td>
+          <td><input class="button"type="button" value="5"onclick="inset(5)"></td>
+          <td><input class="button"type="button" value="6"onclick="inset(6)"></td>
         </tr>
         <tr>
-          <td><input class="button"type="button" value="7"></td>
-          <td><input class="button"type="button" value="8"></td>
-          <td><input class="button"type="button" value="9"></td>
+          <td><input class="button"type="button" value="7"onclick="inset(7)"></td>
+          <td><input class="button"type="button" value="8"onclick="inset(8)"></td>
+          <td><input class="button"type="button" value="9"onclick="inset(9)"></td>
         </tr>
         <tr>
-          <td><input class="button"type="button" value="C"></td>
-          <td><input class="button"type="button" value="0"></td>
-          <td><input class="button"type="button" value="="></td>
+          <td><input class="button"type="button" value="C"onclick="clean()"></td>
+          <td><input class="button"type="button" value="0"onclick="inset(0)"></td>
+          <td><input class="button"type="button" value="="onclick="equal()"></td>
         </tr>
       </table>
   </div>
