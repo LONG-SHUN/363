@@ -15,7 +15,7 @@
 	.a1{
 				background-color: #66b3ff;
 			}
-	.btn {
+	.button {
 		-webkit-appearance : none ;/*解决ios上按钮的圆角问题*/
 		}
         </style>
@@ -107,52 +107,67 @@
             <input type="text" id="nummessege"/>
         </td>
     </tr>
-    <tr>
+			<tr>
+                <td>
+                      <input type="button" value="1" id="1" onclick="onclicknum(1)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="2" id="2" onclick="onclicknum(2)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="3" id="3" onclick="onclicknum(3)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			</tr>
+			<tr>
+				<td>
+                      <input type="button" value="4" id="4" onclick="onclicknum(4)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="5" id="5" onclick="onclicknum(5)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="6" id="6" onclick="onclicknum(6)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			<tr>
+				<td>
+                      <input type="button" value="7" id="7" onclick="onclicknum(7)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="8" id="8" onclick="onclicknum(8)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="3" id="3" onclick="onclicknum(3)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			</tr>
+	    <tr>
         <td>
-            <input type="button" class="btn" value="c" id="clear"
-                   onclick="onclickclear()">
+            <input type="button" class="btn" value="c" 
+                   onclick="onclickclear()" style="height: 70px; width: 90px; font-size: 35px">
         </td>
         <td>
-            <input type="button" class="btn" value="=" id="result"
-                   onclick="onclickresult()">
+            <input type="button" value="0" id="0" onclick="onclicknum(0)"
+                          style="height: 70px; width: 90px; font-size: 35px">
         </td>
 		<td>
-            <input type="button" class="btn" value="=" id="result"
-                   onclick="onclickresult()">
+            <input type="button" class="btn" value="=" 
+                   onclick="onclickresult()" style="height: 70px; width: 90px; font-size: 35px">
         </td>
-	</tr>   
-	<tr>
-				<td><input type="button" class="btn" value="1" id="1"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="2" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="3" id="result"
-                   onclick="onclickresult()"></td>
-			</tr>
-			<tr>
-                <td><input type="button" class="btn" value="1" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="2" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="3" id="result"
-                   onclick="onclickresult()"></td>
-			</tr>
-			<tr>
-				<td><input type="button" class="btn" value="1" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="2" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="3" id="result"
-                   onclick="onclickresult()"></td>
-			</tr>
-			<tr>
-				<td><input type="button" class="btn" value="1" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="2" id="result"
-                   onclick="onclickresult()"></td>
-				<td><input type="button" class="btn" value="3" id="result"
-                   onclick="onclickresult()"></td>
-			</tr>
+	</tr>  
 </table>
 </body>
 </html>
