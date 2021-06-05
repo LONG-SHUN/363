@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <title>ATW四级密钥</title>
 	<style>
-	.btn {
+
+    .atw{
+				background-color: #66b3ff;
+			}
+	.a1{
+		        font-size: 30px;
+				background-color: #66b3ff;
+			}
+	.a3{
+				background-color: #66b3ff;
+			}
+    .classtr{
+				text-align: center;
+				background-color: deepskyblue;
+			}
+	.button {
 		-webkit-appearance : none ;/*解决ios上按钮的圆角问题*/
-		}
-	.bg{
-		background:linear-gradient(to right,#e91e63,#3f515b);
-		height:100%;
 		}
         </style>
     <script type="text/javascript">
@@ -87,29 +98,87 @@
     </script>
 </head>
 <body >
-	<div class="bg"></div>
-	<div class="main">
-<table border="1" align="center" bgColor="#66b3ff">
-    <tr align="center" height="225">
-        <td colspan="2">
-            <input type="text" id="nummessege"
-                   style="height: 212px; width: 525px; font-size: 190px" />
+			<table class="a1" align="center">
+			<tr>
+				<td align="center">
+					<font style="color:blue">A
+					<font style="color:blue">T
+					<font style="color:blue">W
+				    <font style="color:blue">-
+					<font style="color:blue">四
+					<font style="color:blue">级
+					<font style="color:blue">密
+					<font style="color:blue">钥	
+				</td>
+			</tr>	
+		<tr class="a2">
+        <td>
+            <input type="text" id="nummessege" style="height: 70px; width: 270px; font-size: 35px"/>
         </td>
     </tr>
-    <tr align="center" height="256">
+					</table>
+	<table class="a3" align="center">
+			<tr class="classtr">
+                <td>
+                      <input type="button" value="1" id="1" onclick="onclicknum(1)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="2" id="2" onclick="onclicknum(2)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="3" id="3" onclick="onclicknum(3)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			</tr>
+			<tr class="classtr">
+				<td>
+                      <input type="button" value="4" id="4" onclick="onclicknum(4)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="5" id="5" onclick="onclicknum(5)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="6" id="6" onclick="onclicknum(6)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			<tr class="classtr">
+				<td>
+                      <input type="button" value="7" id="7" onclick="onclicknum(7)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="8" id="8" onclick="onclicknum(8)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+  
+                  <td>
+                      <input type="button" value="3" id="3" onclick="onclicknum(3)"
+                          style="height: 70px; width: 90px; font-size: 35px">
+                  </td>
+			</tr>
+	    <tr class="classtr">
         <td>
-            <input type="button" class="btn" value="c" id="clear"
-                   onclick="onclickclear()"
-                   style="height: 255px;width: 255px;font-size: 120px;margin-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
+            <input type="button" class="btn" value="c" 
+                   onclick="onclickclear()" style="height: 70px; width: 90px; font-size: 35px">
         </td>
         <td>
-            <input type="button" class="btn" value="=" id="result"
-                   onclick="onclickresult()"
-                   style="height: 255px;width: 255px;font-size: 120px;margin-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
+            <input type="button" value="0" id="0" onclick="onclicknum(0)"
+                          style="height: 70px; width: 90px; font-size: 35px">
         </td>
-	</tr>    
+		<td>
+            <input type="button" class="btn" value="=" 
+                   onclick="onclickresult()" style="height: 70px; width: 90px; font-size: 35px">
+        </td>
+	</tr>  
 </table>
-	</div>
-    <h1 align="center"></h1>
 </body>
 </html>
