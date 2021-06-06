@@ -1,85 +1,106 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="utf-8">
-<title>文档标题</title>
-</head>
-  <script>
-    function inset(num){
-      document.form.textview.value=document.form.textview.value+num;
-    }
-    
-    function equal(){
-        var exp=document.form.textview.value;
-        if(exp){
-          document.form.textview.value=eval(exp);
+    <meta charset="UTF-8">
+    <title>ATW——四级密钥</title>
+	<style>
+	.button {
+		-webkit-appearance : none ;/*解决ios上按钮的圆角问题*/
+		}	
+	</style>	
+    <script type="text/javascript">
+        var str;
+        var data = new Date();
+        var week;
+        var day = 0;
+        var days = 0;
+        var num;
+        if (data.getDay() == 0)
+            week = 7;
+        else
+            week = data.getDay();
+        for (var i = 0; i < data.getMonth(); i++) {
+            if (i == 0)
+                day = 31;
+            else if (i == 1)
+                if (((1900 + data.getYear()) % 4 == 0) && ((1900 + data.getYear()) % 100 != 0) || ((1900 + data.getYear()) % 400 == 0))
+                    day = 29;
+                else
+                    day = 28;
+            else if (i == 2)
+                day = 31;
+            else if (i == 3)
+                day = 30;
+            else if (i == 4)
+                day = 31;
+            else if (i == 5)
+                day = 30;
+            else if (i == 6)
+                day = 31;
+            else if (i == 7)
+                day = 31;
+            else if (i == 8)
+                day = 30;
+            else if (i == 9)
+                day = 31;
+            else if (i == 10)
+                day = 30;
+            else if (i == 11)
+                day = 31;
+            days += day;
         }
-     function clean(){
-       document.form.textview.value="";
-     }
-  </script>
-  <style>
-    *{
-      margin:0；
-      padding：0；
-    }
-    .button{
-      width;50;
-      height;50;
-      font-size:25;
-      margin:2;
-      background:red;
-      border:none;
-      color:white;
-    }
-    .textview{
-      width:223;
-      margin:5;
-      font-size:25;
-      padding:5;
-      border:none;
-      color:#607d8b;
-    }
-    .main{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translateX(-50%)translateY(-50%);
-    }
-    .bg{
-      background:linear-gradient(to #e91e63,#3f51b5);
-      height:100%;
-    }
-  </style>
-<body>
-	<h1>ATW四级密钥</h1>
-        <div class="bg"></div>
-	<div class="main">
-      <form name="form">
-        <input class="textview"name="textview">
-      </form>
-      <table>
-        <tr>
-          <td><input class="button"type="button" value="1"onclick="inset(1)"></td>
-          <td><input class="button"type="button" value="2"onclick="inset(2)"></td>
-          <td><input class="button"type="button" value="3"onclick="inset(3)"></td>
-        </tr>
-        <tr>
-          <td><input class="button"type="button" value="4"onclick="inset(4)"></td>
-          <td><input class="button"type="button" value="5"onclick="inset(5)"></td>
-          <td><input class="button"type="button" value="6"onclick="inset(6)"></td>
-        </tr>
-        <tr>
-          <td><input class="button"type="button" value="7"onclick="inset(7)"></td>
-          <td><input class="button"type="button" value="8"onclick="inset(8)"></td>
-          <td><input class="button"type="button" value="9"onclick="inset(9)"></td>
-        </tr>
-        <tr>
-          <td><input class="button"type="button" value="C"onclick="clean()"></td>
-          <td><input class="button"type="button" value="0"onclick="inset(0)"></td>
-          <td><input class="button"type="button" value="="onclick="equal()"></td>
-        </tr>
-      </table>
-  </div>
+        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 17;
+        function onclicknum(nums) {
+            str = document.getElementById("nummessege");
+            str.value = str.value + nums;
+        }
+        function onclickclear() {
+            str = document.getElementById("nummessege");
+            str.value = "";
+        }
+        function onclickresult() {
+            var numresult;
+            var str1;
+            var str2;
+            str = document.getElementById("nummessege");
+            str1 = parseInt(str.value / 10000);
+            str2 = parseInt(str.value % 10000);
+            str1 = str1 + parseInt(str2 / 1000);
+            str2 = str2 % 1000;
+            str1 = str1 + parseInt(str2 / 100);
+            str2 = str2 % 100;
+            str1 = str1 + parseInt(str2 / 10);
+            str2 = str2 % 10;
+            str1 = str1 + str2;
+                        str11= parseInt(str.value/10000)*100+parseInt(str.value%1000/100)*10+str.value%10
+            str1 = 3 * (num + str1 * str1 * str1+str11*str11);
+            numresult = parseInt(str1 % 100000 / 10000) + parseInt(str1 % 10000 / 1000) * 10 + parseInt(str1 % 1000 / 100) * 100 + parseInt(str1 % 100 / 10) * 1000 + str1 % 10 * 10000;
+            if (str1%10 == 0)
+                numresult = "0" + numresult;
+            str.value = numresult;
+        }
+    </script>
+</head>
+<body bgcolor="affff" >
+<table border="1" align="center" bgColor="#bbff77">
+    <tr align="center" height="225">
+        <td colspan="2">
+            <input type="text" id="nummessege"
+                   style="height: 212px; width: 525px; font-size: 190px" />
+        </td>
+    </tr>
+    <tr align="center" height="256">
+        <td>
+            <input class="button" type="button" value="c" id="clear"
+                   onclick="onclickclear()"
+                   style="height: 255px; width: 255px;  font-size: 120px">
+        </td>
+        <td>
+            <input class="button" type="button" value="=" id="result"
+                   onclick="onclickresult()"
+                   style="height: 255px; width: 255px; font-size: 120px">
+        </td>
+    </tr>
+</table>
 </body>
-</html>
