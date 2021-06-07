@@ -1,160 +1,91 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>ATW——四级密钥</title>
-	<style>
-    .classtr{
-
-		}
-    .classtd{
-    text-align:center;	
-
-		}
-	.button {
-		-webkit-appearance : none ;/*解决ios上按钮的圆角问题*/
-		background-color:#1E90FF;
-		}	
-	</style>	
-    <script type="text/javascript">
-        var str;
-        var data = new Date();
-        var week;
-        var day = 0;
-        var days = 0;
-        var num;
-        if (data.getDay() == 0)
-            week = 7;
-        else
-            week = data.getDay();
-        for (var i = 0; i < data.getMonth(); i++) {
-            if (i == 0)
-                day = 31;
-            else if (i == 1)
-                if (((1900 + data.getYear()) % 4 == 0) && ((1900 + data.getYear()) % 100 != 0) || ((1900 + data.getYear()) % 400 == 0))
-                    day = 29;
-                else
-                    day = 28;
-            else if (i == 2)
-                day = 31;
-            else if (i == 3)
-                day = 30;
-            else if (i == 4)
-                day = 31;
-            else if (i == 5)
-                day = 30;
-            else if (i == 6)
-                day = 31;
-            else if (i == 7)
-                day = 31;
-            else if (i == 8)
-                day = 30;
-            else if (i == 9)
-                day = 31;
-            else if (i == 10)
-                day = 30;
-            else if (i == 11)
-                day = 31;
-            days += day;
-        }
-        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 17;
-        function onclicknum(nums) {
-            str = document.getElementById("nummessege");
-            str.value = str.value + nums;
-        }
-        function onclickclear() {
-            str = document.getElementById("nummessege");
-            str.value = "";
-        }
-        function onclickresult() {
-            var numresult;
-            var str1;
-            var str2;
-            str = document.getElementById("nummessege");
-            str1 = parseInt(str.value / 10000);
-            str2 = parseInt(str.value % 10000);
-            str1 = str1 + parseInt(str2 / 1000);
-            str2 = str2 % 1000;
-            str1 = str1 + parseInt(str2 / 100);
-            str2 = str2 % 100;
-            str1 = str1 + parseInt(str2 / 10);
-            str2 = str2 % 10;
-            str1 = str1 + str2;
-                        str11= parseInt(str.value/10000)*100+parseInt(str.value%1000/100)*10+str.value%10
-            str1 = 3 * (num + str1 * str1 * str1+str11*str11);
-            numresult = parseInt(str1 % 100000 / 10000) + parseInt(str1 % 10000 / 1000) * 10 + parseInt(str1 % 1000 / 100) * 100 + parseInt(str1 % 100 / 10) * 1000 + str1 % 10 * 10000;
-            if (str1%10 == 0)
-                numresult = "0" + numresult;
-            str.value = numresult;
-        }
-    </script>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
 </head>
+	<style>
+		*{
+          padding:0;
+          margin:0;
+		}
+		html,body{	
+          width: 100%;
+	      height: 100%;
+	      background-color:white;
+		}
+		.main{
+	      text-align: center;
+	      background-color: blue;
+	      border-radius: 20px;
+	      width: 300px;
+	      height: 400px;
+	      margin: auto;
+	      position: absolute;
+	      top: 200px;
+	      left: 200px;
+	      right: 200px;
+	      bottom: 200px;
+       } 
+		h1{
+	     font-size: 2em;
+	     color: #fff;
+         margin-top:10px;
+       }
+		.showAns{
+	     width: 250px;
+		 height: 50px;	
+	     margin: 0 auto;
+	     margin-bottom: 5px;
+	     border:solid 1px #fff;
+	     background-color: white;
+	     padding: 3px 5px;
+	     text-align: center;
+      }
+
+       .buttons{
+        width: 275px;
+	    margin: 0 auto; 
+	    padding: 7px;
+      }
+
+       button{
+	   margin-bottom: 7px;
+	width: 62px;
+	height: 40px;
+	background-color:#fff;
+	border-style: none;
+	outline: none;
+	color: #656765;
+}
+	</style>
 <body>
-<table border="2" align="center">
-    <tr class="classtr" align="center" height="225">
-        <td class="classtd" colspan="3">
-            <input type="text" id="nummessege" 
-                   style="height: 212px; width: 540px; font-size: 190px;">
-        </td>
-    </tr>
-	<tr class="classtr" align="center" height="180">
-        <td class="classtd">
-            <input class="button" type="button" value="1" id="1" onclick="onclicknum(1)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-        <td class="classtd">
-            <input class="button" type="button" value="2" id="2" onclick="onclicknum(2)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-		<td class="classtd">
-            <input class="button" type="button" value="3" id="3" onclick="onclicknum(3)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-    </tr>
-	<tr class="classtr" align="center" height="180">
-        <td class="classtd">
-            <input class="button" type="button" value="4" id="4" onclick="onclicknum(4)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-        <td class="classtd">
-            <input class="button" type="button" value="5" id="5" onclick="onclicknum(5)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-		<td class="classtd">
-            <input class="button" type="button" value="6" id="6" onclick="onclicknum(6)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-    </tr>
-	<tr class="classtr" align="center" height="180">
-        <td class="classtd">
-            <input class="button" type="button" value="7" id="7" onclick="onclicknum(7)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-        <td class="classtd">
-            <input class="button" type="button" value="8" id="8" onclick="onclicknum(8)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-		<td class="classtd">
-            <input class="button" type="button" value="9" id="9" onclick="onclicknum(9)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-    </tr>
-	    <tr class="classtr" align="center" height="180">
-        <td class="classtd">
-            <input class="button" type="button" value="c" id="clear"
-                   onclick="onclickclear()"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-        <td class="classtd">
-            <input class="button" type="button" value="0" id="0" onclick="onclicknum(0)"
-                   style="height: 180px; width: 180px;  font-size: 120px">
-        </td>
-		<td class="classtd">
-            <input class="button" type="button" value="=" id="result"
-                   onclick="onclickresult()"
-                   style="height: 180px; width: 180px; font-size: 120px;padding-left: 1px;padding-right: 1px">
-        </td>
-    </tr>
-</table>
+	<div class="main">
+		<h1>ATW4+</h1>
+		<input type="text" name="number" readonly class="showAns">
+		<div class="buttons">
+			<button value="AC">AC</button>
+			<button value="CE">CE</button>
+			<button value="%">%</button>
+			<button value="/">/</button>
+			<button value="7">7</button>
+			<button value="8">8</button>
+			<button value="9">9</button>
+			<button value="*">*</button>
+			<button value="4">4</button>
+			<button value="5">5</button>
+			<button value="6">6</button>
+			<button value="-">-</button>
+			<button value="1">1</button>
+			<button value="2">2</button>
+			<button value="3">3</button>
+			<button value="+">+</button>
+			<button value=".">.</button>
+			<button value="0">0</button>
+			<button value="Ans">Ans</button>
+			<button value="=">=</button>
+		</div>
+		<h2>@LONG-SHUN.2021</h2>
+	</div>
 </body>
+</html>
