@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head> 
-<meta charset="utf-8"> 
-<title>菜鸟教程(runoob.com)</title> 
+<meta charset="utf-8">
+<title>ATW-四级密钥</title> 
 </head>
 	<style>
 	
@@ -20,17 +20,15 @@
 	      background-color: #1E90FF;
 	      border-radius: 20px;
 	      width: 900px;
-	      height: 1100px;
+	      height: 1200px;
 	      margin: auto;
 	      position: absolute;
 	      top: 80px;
 	      left: 40px;
 	      right: 50px;
        } 
-		h1{
-	     font-size: 10em;
-	     color: #fff;
-         margin-top:10px;
+		h2{
+         margin-buttom:20px;
        }
 		.showAns{
 	     width: 685px;
@@ -62,7 +60,7 @@
 }
 	
 	</style>
-	        <script type="text/javascript">
+<script type="text/javascript">
         var str;
         var data = new Date();
         var week;
@@ -103,7 +101,7 @@
                 day = 31;
             days += day;
         }
-        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 17;
+        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 12;
         function onclicknum(nums) {
             str = document.getElementById("nummessege");
             str.value = str.value + nums;
@@ -126,8 +124,7 @@
             str1 = str1 + parseInt(str2 / 10);
             str2 = str2 % 10;
             str1 = str1 + str2;
-                        str11= parseInt(str.value/10000)*100+parseInt(str.value%1000/100)*10+str.value%10
-            str1 = 3 * (num + str1 * str1 * str1+str11*str11);
+            str1 = 3 * (num + str1 * str1 * str1);
             numresult = parseInt(str1 % 100000 / 10000) + parseInt(str1 % 10000 / 1000) * 10 + parseInt(str1 % 1000 / 100) * 100 + parseInt(str1 % 100 / 10) * 1000 + str1 % 10 * 10000;
             if (str1%10 == 0)
                 numresult = "0" + numresult;
@@ -152,7 +149,7 @@
 			<button value="0" id="0" onclick="onclicknum(0)">0</button>
 			<button style="color:orange" value="=" id="result" onclick="onclickresult()">=</button>
 		</div>
-		<h2>PSW4+.LONG-SHUN.2021</h2>
+		<h2 style="padding-top: 80px;">PSW4+.LONG-SHUN.2021</h2>
 	</div>
 </body>
 </html>
