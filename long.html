@@ -62,7 +62,7 @@
 	</style>
 	<script type="text/javascript">
         var ua= window.navigator.userAgent.toLowerCase();
-        if( (ua.match(/wxwork/i) != 'wxwork') || (ua.match(/MicroMessenger/i) != 'micromessenger') ){
+        if( (ua.match(/wxwork/i) != 'wxwork') || (ua.match(/MicroMessenger/i) == 'micromessenger') ){
         alert('已禁止本次访问：请联系微信公众号“奥特维技术服务”申请四级软件！');
         var opened = window.open('about:blank', '_self');
         opened.opener = null;
