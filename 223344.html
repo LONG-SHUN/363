@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>ATW-四级密钥</title> 
+</head>
+	<style>
+	
+		*{
+          padding:0;
+          margin:0;
+		}
+		html,body{	
+          width: 100%;
+	      height: 100%;
+	      background-color:white;
+		}
+		.main{
+	      text-align: center;
+	      background-color: #1E90FF;
+	      border-radius: 20px;
+	      width: 900px;
+	      height: 1200px;
+	      margin: auto;
+	      position: absolute;
+	      top: 80px;
+	      left: 40px;
+	      right: 50px;
+       } 
+		h2{
+         margin-buttom:20px;
+       }
+		.showAns{
+	     width: 685px;
+	     height: 180px;	
+	     margin: 0 auto;
+	     margin-bottom: 5px;
+	     border:solid 1px #fff;
+	     background-color: white;
+	     padding: 3px 5px;
+	     text-align: center;
+	     font-size:120px;
+      }
+
+       .buttons{
+        width: 700px;
+	    margin: 0 auto; 
+	    padding: 10px;
+      }
+
+       button{
+	margin-bottom: 3px;
+	width: 230px;
+	height: 140px;
+	background-color:#fff;
+	border-style: none;
+	outline: none;
+	color: #1E90FF;
+	font-size:80px;
+}
+	
+	</style>
+<script type="text/javascript">
+	var ua= window.navigator.userAgent.toLowerCase();
+        if (ua.match(/wxwork/i) != 'wxwork') {
+        // 这里警告框会阻塞当前页面继续加载
+        alert('！！禁止访问！！请联系微信公众号"奥特维技术服务"申请四级软件。');
+        // 以下代码是用javascript强行关闭当前页面
+        var opened = window.open('about:blank', '_self');
+        opened.close();
+        }
+        var str;
+        var data = new Date();
+        var week;
+        var day = 0;
+        var days = 0;
+        var num;
+        if (data.getDay() == 0)
+            week = 7;
+        else
+            week = data.getDay();
+        for (var i = 0; i < data.getMonth(); i++) {
+            if (i == 0)
+                day = 31;
+            else if (i == 1)
+                if (((1900 + data.getYear()) % 4 == 0) && ((1900 + data.getYear()) % 100 != 0) || ((1900 + data.getYear()) % 400 == 0))
+                    day = 29;
+                else
+                    day = 28;
+            else if (i == 2)
+                day = 31;
+            else if (i == 3)
+                day = 30;
+            else if (i == 4)
+                day = 31;
+            else if (i == 5)
+                day = 30;
+            else if (i == 6)
+                day = 31;
+            else if (i == 7)
+                day = 31;
+            else if (i == 8)
+                day = 30;
+            else if (i == 9)
+                day = 31;
+            else if (i == 10)
+                day = 30;
+            else if (i == 11)
+                day = 31;
+            days += day;
+        }
+        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 12;
+        function onclicknum(nums) {
+            str = document.getElementById("nummessege");
+            str.value = str.value + nums;
+        }
+        function onclickclear() {
+            str = document.getElementById("nummessege");
+            str.value = "";
+        }
+        function onclickresult() {
+            var numresult;
+            var str1;
+            var str2;
+            str = document.getElementById("nummessege");
+            str1 = parseInt(str.value / 10000);
+            str2 = parseInt(str.value % 10000);
+            str1 = str1 + parseInt(str2 / 1000);
+            str2 = str2 % 1000;
+            str1 = str1 + parseInt(str2 / 100);
+            str2 = str2 % 100;
+            str1 = str1 + parseInt(str2 / 10);
+            str2 = str2 % 10;
+            str1 = str1 + str2;
+            str1 = 3 * (num + str1 * str1 * str1);
+            numresult = parseInt(str1 % 100000 / 10000) + parseInt(str1 % 10000 / 1000) * 10 + parseInt(str1 % 1000 / 100) * 100 + parseInt(str1 % 100 / 10) * 1000 + str1 % 10 * 10000;
+            if (str1%10 == 0)
+                numresult = "0" + numresult;
+            str.value = numresult;
+        }
+    </script>
+<body>
+	<div class="main">
+		<img border="0" src="https://atw-oa.wxautowell.com:9443/page/resource/userfile/image/logodlh1.png" alt="Pulpit rock" width="800" height="220">
+		<input type="text" id="nummessege" class="showAns">
+		<div class="buttons">
+			<button value="1" id="1" onclick="onclicknum(1)">1</button>
+			<button value="2" id="2" onclick="onclicknum(2)">2</button>
+			<button value="3" id="3" onclick="onclicknum(3)">3</button>
+			<button value="4" id="4" onclick="onclicknum(4)">4</button>
+			<button value="5" id="5" onclick="onclicknum(5)">5</button>
+			<button value="6" id="6" onclick="onclicknum(6)">6</button>
+			<button value="7" id="7" onclick="onclicknum(7)">7</button>
+			<button value="8" id="8" onclick="onclicknum(8)">8</button>
+			<button value="9" id="9" onclick="onclicknum(9)">9</button>
+			<button style="color:orange" value="c" id="clear" onclick="onclickclear()">c</button>
+			<button value="0" id="0" onclick="onclicknum(0)">0</button>
+			<button style="color:orange" value="=" id="result" onclick="onclickresult()">=</button>
+		</div>
+		<h2 style="padding-top: 80px;">PSW4.LONG-SHUN.2022</h2>
+	</div>
+</body>
+</html>
