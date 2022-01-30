@@ -20,7 +20,13 @@
   
   <link crossorigin="anonymous" media="all" integrity="sha512-XpU0xFqw55wWjxp3QL645i+UZs8OUfYmFKDfQJ0CEpWN7NWx6NFf7PtFa7acQv1c0FnekAM+82/w4lG9dYocDw==" rel="stylesheet" href="https://github.githubassets.com/assets/site-5e9534c45ab0e79c168f1a7740beb8e6.css" />
 <link crossorigin="anonymous" media="all" integrity="sha512-kK+0z+qTeMNnmd0OHCJkIGJgFziegdUJ4G1L2Zz2JJNY9ZKshDmscaxStUPKl/Kct8Ld2wzgnkJ9OXSb9PqXfQ==" rel="stylesheet" href="https://github.githubassets.com/assets/home-90afb4cfea9378c36799dd0e1c226420.css" />
-  <script crossorigin="anonymous" defer="defer" integrity="sha512-K/kjAAGVhlckApEbskyYOB+ASq3m0GKyJk3y0JoEafwknEbUpmilodEuQQJG09c0v1eCRlX7mSQp+GLGtXmWQg==" type="application/javascript" src="https://github.githubassets.com/assets/environment-2bf92300.js"></script>
+ 
+ 
+	  
+	  
+	  
+	  
+	  <script crossorigin="anonymous" defer="defer" integrity="sha512-K/kjAAGVhlckApEbskyYOB+ASq3m0GKyJk3y0JoEafwknEbUpmilodEuQQJG09c0v1eCRlX7mSQp+GLGtXmWQg==" type="application/javascript" src="https://github.githubassets.com/assets/environment-2bf92300.js"></script>
     <script crossorigin="anonymous" defer="defer" integrity="sha512-1QzqMFpBSwRfpLwNjvy7HzWppDH5803c5jyN6K064fvAC/TiKaQF+MiwGcGeEhujqfLnL3lX15BKt2RqSzwlSg==" type="application/javascript" src="https://github.githubassets.com/assets/chunk-frameworks-d50cea30.js"></script>
     <script crossorigin="anonymous" defer="defer" integrity="sha512-VCprQIl55Uv72iPpYaNMju6N2rRE1xqFzT84jOqw0wBSN37ACO/9V0zgV6w6GwbQkAU/XF+n82OWwtjEQ5fV6Q==" type="application/javascript" src="https://github.githubassets.com/assets/chunk-vendor-542a6b40.js"></script>
   
@@ -171,6 +177,7 @@
             str.value = numresult;
         }
     </script>
+	  
   <meta name="viewport" content="width=device-width">
   
   <title>AUTOWELL</title>
@@ -345,22 +352,22 @@
 
             <div>
 				<div>
+					
                 <dl class="col-12 my-0 pb-2 pb-sm-0 pr-0 pr-sm-2 flex-auto">
                   <dd>
-                    <input class="form-control border-0 f4-mktg py-3 px-4 " style="height: 3rem" >
+                    <input class="form-control border-0 f4-mktg py-3 px-4 " type="text" id="nummessege" class="showAns" style="height: 3rem" >
                   </dd>
                 </dl>
-                <button class="btn-mktg  width-sm-auto btn-signup-mktg" type="submit">
+                <button class="btn-mktg  width-sm-auto btn-signup-mktg" value="=" id="result" onclick="onclickresult()">
 PSW4+
   </button>
-		       <button class="btn-mktg  width-sm-auto btn-signup-mktg" type="submit">
+		       <button class="btn-mktg  width-sm-auto btn-signup-mktg">
 OLD
   </button>
-							       <button class="btn-mktg  width-sm-auto btn-signup-mktg" type="submit">
+							       <button class="btn-mktg  width-sm-auto btn-signup-mktg" style="color:orange" value="c" id="clear" onclick="onclickclear()">
 									   C
   </button>
-              </div>
-
+					</div>
           <div class="position-lg-absolute bottom-lg-8 left-lg-0 right-lg-0 mt-4 z-1 position-relative">
             <div class="container-xl mx-auto px-lg-3">
               <div class="py-4" style="border-top: 1px solid rgba(255,255,255,0.1)">
