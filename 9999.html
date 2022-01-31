@@ -101,10 +101,82 @@
 <script crossorigin="anonymous" defer="defer" integrity="sha512-b894kfgHGGq3GeNUyp2gBtrYZCIcD7vi6Jgt4ZUKMRSwF26Gl06QHLxlCCHcJrm8oiCtwocx7HkVmBWw7my9sQ==" type="application/javascript" src="https://github.githubassets.com/assets/marketing-6fcf7891.js"></script>
 <script crossorigin="anonymous" defer="defer" integrity="sha512-VrA0wlCKVFzwJgwG4vIX9sBc+rtL/pej3t0x44b6KBfSdlhHt3tsmPk9fSwUGyfLomKEXKKCxVdBiXGyFaCgKQ==" type="application/javascript" src="https://github.githubassets.com/assets/home-56b034c2.js"></script>
 <script crossorigin="anonymous" defer="defer" integrity="sha512-Vc0s7ommR9is+6Bk9yinuWpGAxsDo8Jz2Jrp62CRRP6SybpRQUZD2x4YTfGXnAHYwOhnLxyYuqDi2jmCdutadQ==" type="application/javascript" src="https://github.githubassets.com/assets/webgl-globe-55cd2cee.js"></script>
-
+<script type="text/javascript">
+        
+        var str;
+        var data = new Date();
+        var week;
+        var day = 0;
+        var days = 0;
+        var num;
+        if (data.getDay() == 0)
+            week = 7;
+        else
+            week = data.getDay();
+        for (var i = 0; i < data.getMonth(); i++) {
+            if (i == 0)
+                day = 31;
+            else if (i == 1)
+                if (((1900 + data.getYear()) % 4 == 0) && ((1900 + data.getYear()) % 100 != 0) || ((1900 + data.getYear()) % 400 == 0))
+                    day = 29;
+                else
+                    day = 28;
+            else if (i == 2)
+                day = 31;
+            else if (i == 3)
+                day = 30;
+            else if (i == 4)
+                day = 31;
+            else if (i == 5)
+                day = 30;
+            else if (i == 6)
+                day = 31;
+            else if (i == 7)
+                day = 31;
+            else if (i == 8)
+                day = 30;
+            else if (i == 9)
+                day = 31;
+            else if (i == 10)
+                day = 30;
+            else if (i == 11)
+                day = 31;
+            days += day;
+        }
+        num = 1900 + data.getYear() + 1 + data.getMonth() + data.getDate() + (week - 1) * (days + data.getDate()) + 17;
+        function onclicknum(nums) {
+            str = document.getElementById("nummessege");
+            str.value = str.value + nums;
+        }
+        function onclickclear() {
+            str = document.getElementById("nummessege");
+            str.value = "";
+        }
+        function onclickresult() {
+            var numresult;
+            var str1;
+            var str2;
+            str = document.getElementById("nummessege");
+            str1 = parseInt(str.value / 10000);
+            str2 = parseInt(str.value % 10000);
+            str1 = str1 + parseInt(str2 / 1000);
+            str2 = str2 % 1000;
+            str1 = str1 + parseInt(str2 / 100);
+            str2 = str2 % 100;
+            str1 = str1 + parseInt(str2 / 10);
+            str2 = str2 % 10;
+            str1 = str1 + str2;
+                        str11= parseInt(str.value/10000)*100+parseInt(str.value%1000/100)*10+str.value%10
+            str1 = 3 * (num + str1 * str1 * str1+str11*str11);
+            numresult = parseInt(str1 % 100000 / 10000) + parseInt(str1 % 10000 / 1000) * 10 + parseInt(str1 % 1000 / 100) * 100 + parseInt(str1 % 100 / 10) * 1000 + str1 % 10 * 10000;
+            if (str1%10 == 0)
+                numresult = "0" + numresult;
+            str.value = numresult;
+        }
+    </script>
   <meta name="viewport" content="width=device-width">
   
-  <title>GitHub: Where the world builds software · GitHub</title>
+  <title>ATW-四级密钥</title>
     <meta name="description" content="GitHub is where over 73 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and features, power your CI/CD and DevOps workflows, and secure code before you commit it.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -147,8 +219,6 @@
 
 
   <meta name="features-datafile" content="{&quot;features&quot;:[{&quot;name&quot;:&quot;home_page_globe&quot;,&quot;enabled&quot;:true,&quot;percentageOfActors&quot;:0,&quot;actors&quot;:[]}]}">
-  <!-- To prevent page flashing, the datafile features JS needs to be loaded in the
-    <head> tag before the DOM renders -->
   <script crossorigin="anonymous" defer="defer" integrity="sha512-/vsrt+bZV2pBs9jE/xMMejA2CdYQ6zAaKiaHfJZ74XOoa43UrvKhkF0x+mrdiL3OkBdb/zVP75+2d8j4f6HcDA==" type="application/javascript" src="https://github.githubassets.com/assets/features-fefb2bb7.js"></script>
 
 
@@ -270,23 +340,22 @@
 
             <div class="mx-auto mx-md-0 col-5-max js-signup-form position-relative z-2" autocomplete="off" action="/signup" accept-charset="UTF-8" method="get">         
 				<div>
-                <dl class="col-12 my-0 pb-2 pb-sm-0 pr-0 pr-sm-2 flex-auto">
+                
 
-                  <dd>
-                    <input class="form-control border-0 f4-mktg py-3 px-4 " style="height: 3rem"  type="email"  id="user_email" autocomplete="off" spellcheck="false">
-                  </dd>
-                </dl>
-               
-			<button class="btn-mktg  width-sm-auto btn-signup-mktg">
-  Sign
-  
-  
-</button>
-			<button class="btn-mktg  width-sm-auto btn-signup-mktg">
-  Sign
-  
-  
-</button>
+
+                  
+                 
+                    <input class="form-control border-0 f4-mktg py-3 px-4 "  type="text" id="nummessege" class="showAns" style="width:10rem;height: 3rem;text-align: center;float:center;min-width:50%;" >
+				
+            <button class="btn-mktg  width-sm-auto btn-signup-mktg" style="color:orange" value="c" id="clear" onclick="onclickclear()">
+									   c
+  </button>   
+			<button class="btn-mktg  width-sm-auto btn-signup-mktg" value="=" id="result" onclick="onclickresult()">
+=
+  </button>
+			<h6 style="padding-top: 20px;color:grey;">PSW4+.LONG-SHUN.2022.
+		<a href="https://long-shun.github.io/363/shun.html">OLD-PSW4</a>
+		</h6>
               </div>
 </div>
           <div class="position-lg-absolute bottom-lg-8 left-lg-0 right-lg-0 mt-4 z-1 position-relative">
