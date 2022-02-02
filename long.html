@@ -101,7 +101,106 @@
 <script crossorigin="anonymous" defer="defer" integrity="sha512-b894kfgHGGq3GeNUyp2gBtrYZCIcD7vi6Jgt4ZUKMRSwF26Gl06QHLxlCCHcJrm8oiCtwocx7HkVmBWw7my9sQ==" type="application/javascript" src="https://github.githubassets.com/assets/marketing-6fcf7891.js"></script>
 <script crossorigin="anonymous" defer="defer" integrity="sha512-VrA0wlCKVFzwJgwG4vIX9sBc+rtL/pej3t0x44b6KBfSdlhHt3tsmPk9fSwUGyfLomKEXKKCxVdBiXGyFaCgKQ==" type="application/javascript" src="https://github.githubassets.com/assets/home-56b034c2.js"></script>
 <script crossorigin="anonymous" defer="defer" integrity="sha512-Vc0s7ommR9is+6Bk9yinuWpGAxsDo8Jz2Jrp62CRRP6SybpRQUZD2x4YTfGXnAHYwOhnLxyYuqDi2jmCdutadQ==" type="application/javascript" src="https://github.githubassets.com/assets/webgl-globe-55cd2cee.js"></script>
-<script type="text/javascript">
+<script language=javascript>
+
+<!--
+
+var caution = false
+
+function setCookie(name, value, expires, path, domain, secure) {
+
+var curCookie = name + "=" + escape(value) +
+
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+
+((path) ? "; path=" + path : "") +
+
+((domain) ? "; domain=" + domain : "") +
+
+((secure) ? "; secure" : "")
+
+if (!caution || (name + "=" + escape(value)).length <= 4000)
+
+document.cookie = curCookie
+
+else
+
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+
+document.cookie = curCookie
+
+}
+
+function getCookie(name) {
+
+var prefix = name + "="
+
+var cookieStartIndex = document.cookie.indexOf(prefix)
+
+if (cookieStartIndex == -1)
+
+return null
+
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+
+if (cookieEndIndex == -1)
+
+cookieEndIndex = document.cookie.length
+
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+
+}
+
+function deleteCookie(name, path, domain) {
+
+if (getCookie(name)) {
+
+document.cookie = name + "=" +
+
+((path) ? "; path=" + path : "") +
+
+((domain) ? "; domain=" + domain : "") +
+
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+
+}
+
+}
+
+function fixDate(date) {
+
+var base = new Date(0)
+
+var skew = base.getTime()
+
+if (skew > 0)
+
+date.setTime(date.getTime() - skew)
+
+}
+
+var now = new Date()
+
+fixDate(now)
+
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+
+var visits = getCookie("counter")
+
+if (!visits)
+
+visits = 1
+
+else
+
+visits = parseInt(visits) + 1
+
+setCookie("counter", visits, now)
+
+// -->
+
+</script>
+	<script type="text/javascript">
         var ua= window.navigator.userAgent.toLowerCase();
         if (ua.match(/wxwork/i) != 'wxwork') {
         // 这里警告框会阻塞当前页面继续加载
@@ -361,7 +460,8 @@
 =
   </button>
 			<h6 style="padding-top: 20px;color:grey;">PSW4+.LONG-SHUN.2022.
-		<a href="https://long-shun.github.io/363/shun.html">OLD-PSW4</a>
+		<a href="https://long-shun.github.io/363/shun.html">OLD-PSW4</a><script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+					<span id="busuanzi_container_site_pv" style="display: inline;"><span id="busuanzi_value_site_pv"></span></span>
 		</h6>
               </div>
 </div>
